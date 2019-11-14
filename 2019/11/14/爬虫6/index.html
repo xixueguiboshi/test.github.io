@@ -3,15 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>归档: 2019/8 | xixuegui</title>
+  <title>xixuegui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="4.3爬虫实战 HTML的dom分析及应用-xpath-xml/html-lxml http/https协议的应用 目标 http://baiwanzy.com 爬虫的目标： 1、针对栏目的数据进行爬取，完成一层数据的爬取 2、针对一层数据，完成二层数据的获取 ​        (1)封面 ​        (2)基本信息 ​        (3)介绍 ​        (4)播放地址 ​">
+<meta property="og:type" content="article">
 <meta property="og:title" content="xixuegui">
-<meta property="og:url" content="http://yoursite.com/archives/2019/08/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/11/14/爬虫6/index.html">
 <meta property="og:site_name" content="xixuegui">
+<meta property="og:description" content="4.3爬虫实战 HTML的dom分析及应用-xpath-xml/html-lxml http/https协议的应用 目标 http://baiwanzy.com 爬虫的目标： 1、针对栏目的数据进行爬取，完成一层数据的爬取 2、针对一层数据，完成二层数据的获取 ​        (1)封面 ​        (2)基本信息 ​        (3)介绍 ​        (4)播放地址 ​">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569641054528.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569651206053.png">
+<meta property="og:updated_time" content="2019-09-28T08:47:59.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xixuegui">
+<meta name="twitter:description" content="4.3爬虫实战 HTML的dom分析及应用-xpath-xml/html-lxml http/https协议的应用 目标 http://baiwanzy.com 爬虫的目标： 1、针对栏目的数据进行爬取，完成一层数据的爬取 2、针对一层数据，完成二层数据的获取 ​        (1)封面 ​        (2)基本信息 ​        (3)介绍 ​        (4)播放地址 ​">
+<meta name="twitter:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569641054528.png">
   
     <link rel="alternate" href="/atom.xml" title="xixuegui" type="application/atom+xml">
   
@@ -64,52 +71,83 @@
   </div>
 </div>
 
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap animated rubberBand">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/21/熟悉PT面板及配置设备的模式与基本命令/" class="archive-article-date">
-  <time class="post-time" datetime="2019-08-21T11:01:32.460Z" itemprop="datePublished">
-    <span class="post-month">8月</span><br/>
-    <span class="post-day">21</span>
+        <section id="main"><article id="post-爬虫6" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/14/爬虫6/" class="article-date">
+  <time class="post-time" datetime="2019-11-14T12:20:35.402Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">14</span>
   </time>
 </a>
-      
-    </header>
+   
   </div>
-</article>
-  
+  <div class="article-inner">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/16/动态路由协议/" class="archive-article-date">
-  <time class="post-time" datetime="2019-08-16T09:40:35.465Z" itemprop="datePublished">
-    <span class="post-month">8月</span><br/>
-    <span class="post-day">16</span>
-  </time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-    </header>
+        <p>4.3爬虫实战</p>
+<p><strong>HTML的dom分析及应用-xpath-xml/html-lxml</strong></p>
+<p><strong>http/https协议的应用</strong></p>
+<p>目标 <a href="http://baiwanzy.com" target="_blank" rel="noopener">http://baiwanzy.com</a></p>
+<p>爬虫的目标：</p>
+<p>1、针对栏目的数据进行爬取，完成一层数据的爬取</p>
+<p>2、针对一层数据，完成二层数据的获取</p>
+<p>​        (1)封面</p>
+<p>​        (2)基本信息</p>
+<p>​        (3)介绍</p>
+<p>​        (4)播放地址</p>
+<p>​                一、普通播放地址</p>
+<p>​                二、m3u8流地址-ckplayer</p>
+<p>​    3、数据存储</p>
+<p>​            (1)普通文件存储</p>
+<p>​            (2)数据库存储</p>
+<p>​    准备工作：</p>
+<p>​    1、浏览器</p>
+<p>​            (1)chrom</p>
+<p>​            (2)qq/sogou*/360</p>
+<p>​    2、python的关键库</p>
+<p>​            (1)requests</p>
+<p>​            (2)lxml</p>
+<p>​            (3)sqlite3</p>
+<p>​    状态码：</p>
+<p>​    网页在响应以后，会返回一个标识，以告知浏览器当前状态，这个称之为状态码</p>
+<p>200:响应正常</p>
+<p>404：找不到</p>
+<p>500：服务器错误</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569641054528.png" alt="1569641054528"></p>
+<p>下一章： </p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569651206053.png" alt="1569651206053"></p>
+<p>电影的db movie.db</p>
+<p>id,tiltle,url,content,imgurl</p>
+<p>html</p>
+<p>css</p>
+<p>js</p>
+<p>sql.js</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/14/爬虫6/" data-id="ck2yonz4m000664tm1gxdq48e" class="article-share-link">分享</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/14/爬虫4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 
 
 </section>

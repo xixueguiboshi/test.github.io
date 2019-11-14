@@ -3,15 +3,19 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>归档: 2019/8 | xixuegui</title>
+  <title>xixuegui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="python爬虫数据可视化 准备工作： 1、可以进行爬虫的脚本，且脚本支持数据存储（存储容器建议支持sqlite/mysql/sqlserver） 2、要有一个有数据的数据库文件或系统（sqlite3库本名：xxx.db） 3、具备HTML+CSS+JS的基础应用能力 ​    （1）html:内容 ​    （2）css:布局和样式 ​    （3）JS:交互和事件 4、开发环境： ​    （">
+<meta property="og:type" content="article">
 <meta property="og:title" content="xixuegui">
-<meta property="og:url" content="http://yoursite.com/archives/2019/08/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/11/14/python爬虫数据可视化/index.html">
 <meta property="og:site_name" content="xixuegui">
+<meta property="og:description" content="python爬虫数据可视化 准备工作： 1、可以进行爬虫的脚本，且脚本支持数据存储（存储容器建议支持sqlite/mysql/sqlserver） 2、要有一个有数据的数据库文件或系统（sqlite3库本名：xxx.db） 3、具备HTML+CSS+JS的基础应用能力 ​    （1）html:内容 ​    （2）css:布局和样式 ​    （3）JS:交互和事件 4、开发环境： ​    （">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-08T12:22:35.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xixuegui">
+<meta name="twitter:description" content="python爬虫数据可视化 准备工作： 1、可以进行爬虫的脚本，且脚本支持数据存储（存储容器建议支持sqlite/mysql/sqlserver） 2、要有一个有数据的数据库文件或系统（sqlite3库本名：xxx.db） 3、具备HTML+CSS+JS的基础应用能力 ​    （1）html:内容 ​    （2）css:布局和样式 ​    （3）JS:交互和事件 4、开发环境： ​    （">
   
     <link rel="alternate" href="/atom.xml" title="xixuegui" type="application/atom+xml">
   
@@ -64,52 +68,74 @@
   </div>
 </div>
 
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap animated rubberBand">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/21/熟悉PT面板及配置设备的模式与基本命令/" class="archive-article-date">
-  <time class="post-time" datetime="2019-08-21T11:01:32.460Z" itemprop="datePublished">
-    <span class="post-month">8月</span><br/>
-    <span class="post-day">21</span>
+        <section id="main"><article id="post-python爬虫数据可视化" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/14/python爬虫数据可视化/" class="article-date">
+  <time class="post-time" datetime="2019-11-14T12:20:35.324Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">14</span>
   </time>
 </a>
-      
-    </header>
+   
   </div>
-</article>
-  
+  <div class="article-inner">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/16/动态路由协议/" class="archive-article-date">
-  <time class="post-time" datetime="2019-08-16T09:40:35.465Z" itemprop="datePublished">
-    <span class="post-month">8月</span><br/>
-    <span class="post-day">16</span>
-  </time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-    </header>
+        <p>python爬虫数据可视化</p>
+<p>准备工作：</p>
+<p>1、可以进行爬虫的脚本，且脚本支持数据存储（存储容器建议支持sqlite/mysql/sqlserver）</p>
+<p>2、要有一个有数据的数据库文件或系统（sqlite3库本名：xxx.db）</p>
+<p>3、具备HTML+CSS+JS的基础应用能力</p>
+<p>​    （1）html:内容</p>
+<p>​    （2）css:布局和样式</p>
+<p>​    （3）JS:交互和事件</p>
+<p>4、开发环境：</p>
+<p>​    （1）IDE:HbuilderX</p>
+<p>​    （2）Sqlite 5.2管理工具</p>
+<p>目标：</p>
+<p>通过上一章节中，爬虫爬回来的数据（数据是存放于sqlit3DB文件中），然后通过JS的异步加载方式，加载DB文件，然后从DB中用数据库语法查询出所需要的数据，然后再通过HTML+css将他们呈现在网页上（完成上述功能，需要一个支持HTTP协议的服务器）</p>
+<p>要实现数据从sqlite在读取过来，需要的技术？</p>
+<p>异步加载：Ajax</p>
+<p>核心是js对象XMLHttpRequest，他是一种支持异步请求的技术</p>
+<p>而ajax是一种技术解决方案，包括JS，</p>
+<p>sql</p>
+<p>array uint8array</p>
+<p>首先申明一个对象、请求准备、发送请求、请求成功</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/14/python爬虫数据可视化/" data-id="ck2yonz43000164tmf6h7n0e1" class="article-share-link">分享</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/11/14/爬虫2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/21/熟悉PT面板及配置设备的模式与基本命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 
 
 </section>

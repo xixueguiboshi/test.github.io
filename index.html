@@ -38,7 +38,7 @@
     <h2 class="author">John Doe</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>2</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>9</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -65,6 +65,713 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-爬虫6" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/14/爬虫6/" class="article-date">
+  <time class="post-time" datetime="2019-11-14T12:20:35.402Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">14</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>4.3爬虫实战</p>
+<p><strong>HTML的dom分析及应用-xpath-xml/html-lxml</strong></p>
+<p><strong>http/https协议的应用</strong></p>
+<p>目标 <a href="http://baiwanzy.com" target="_blank" rel="noopener">http://baiwanzy.com</a></p>
+<p>爬虫的目标：</p>
+<p>1、针对栏目的数据进行爬取，完成一层数据的爬取</p>
+<p>2、针对一层数据，完成二层数据的获取</p>
+<p>​        (1)封面</p>
+<p>​        (2)基本信息</p>
+<p>​        (3)介绍</p>
+<p>​        (4)播放地址</p>
+<p>​                一、普通播放地址</p>
+<p>​                二、m3u8流地址-ckplayer</p>
+<p>​    3、数据存储</p>
+<p>​            (1)普通文件存储</p>
+<p>​            (2)数据库存储</p>
+<p>​    准备工作：</p>
+<p>​    1、浏览器</p>
+<p>​            (1)chrom</p>
+<p>​            (2)qq/sogou*/360</p>
+<p>​    2、python的关键库</p>
+<p>​            (1)requests</p>
+<p>​            (2)lxml</p>
+<p>​            (3)sqlite3</p>
+<p>​    状态码：</p>
+<p>​    网页在响应以后，会返回一个标识，以告知浏览器当前状态，这个称之为状态码</p>
+<p>200:响应正常</p>
+<p>404：找不到</p>
+<p>500：服务器错误</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569641054528.png" alt="1569641054528"></p>
+<p>下一章： </p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569651206053.png" alt="1569651206053"></p>
+<p>电影的db movie.db</p>
+<p>id,tiltle,url,content,imgurl</p>
+<p>html</p>
+<p>css</p>
+<p>js</p>
+<p>sql.js</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/14/爬虫6/" data-id="ck2yonz4m000664tm1gxdq48e" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-爬虫4" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/14/爬虫4/" class="article-date">
+  <time class="post-time" datetime="2019-11-14T12:20:35.386Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">14</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第三章：python的文件读写和sqlite操作</p>
+<p>3.1Python的文件读写</p>
+<p>文件操作一般通过内置的open函数完成，这个函数很像C语言中的fopen，通过open函数我们可以获得一个file object</p>
+<p>python 提供的另一个内置函数read():用于读取file object后的内容操作</p>
+<p>python 提供的另一个内置函数write():用于对内容进行编辑(读写)操作</p>
+<p>在文件操作完成以后，一定要关闭close()</p>
+<p>1.open()</p>
+<p>使用方法：open(‘文件的路径’)</p>
+<p>文件的路径：相对路径和绝对路径</p>
+<p>file = open (“demo.txt”)</p>
+<p>3.1.1文件的读操作</p>
+<p>open()</p>
+<p>try:</p>
+<p>​    read()</p>
+<p>finally:</p>
+<p>​    close()</p>
+<p>以上为读操作的步骤和要求，注意事项：</p>
+<p>1、不能在open时，就try语句，因为文件如果一打开就出错，close就不知道怎么办了。</p>
+<p>2、使用open打开文件后，一定要记得调用close方法进行关闭，如果不关闭，可能造成文件被占用而无法被一个需要open操作所使用</p>
+<p>3、文件read()是可以设置读权限：如只读，如强制为二进制等等</p>
+<p>4、open方法也可以通过设置权限来完成相关的操作读写权限等等</p>
+<p>3.1.2Python文件的写操作</p>
+<p>读：read()</p>
+<p>写：write()</p>
+<p>open()</p>
+<p>try:</p>
+<p>​    write()</p>
+<p>finally:</p>
+<p>​    close()</p>
+<p>注意事项：</p>
+<p>1.打开文件，应该具有写模式的参数打开文件</p>
+<p>2.参数不同，写入文件的效果不同</p>
+<p>3.writelines()写入多行在性能上，要比write()一次性写入要高</p>
+<p>3.1.3关于文件的打开模式</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569469225854.png" alt="1569469225854"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569469536313.png" alt="1569469536313"></p>
+<p>3.2  sqlite(Python操作数据库)</p>
+<p>数据库：关系型数据库-DBMS</p>
+<p>sqlite此数据库是系统内置，目前发布到sqlite3.x</p>
+<p>如果Python需要控制或操作sqlite则需要使用对应的库(lib)</p>
+<p>在数据库，一个完整的数据库操作基本上涵盖以下几个部分，且可以根据实际情况进行裁剪：</p>
+<p>3.2.1数据库创建</p>
+<p>create database xxx</p>
+<p>在Python中，2.5以后的版本已经内置了相关支持库，我们只需要引入就可以，不需要下载</p>
+<p>在连接加载库文件时，一定注意文件名是否写正确如果不正确会产生新建操作</p>
+<p>3.2.2数据库表的创建</p>
+<p>create table tablename(clo type,clo type)</p>
+<p>如create table user(id int,primary key)</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569482606996.png" alt="1569482606996"></p>
+<p>在Python中如何执行sql?</p>
+<p>1、加载数据库文件</p>
+<p>2、通过加载的连接对象，创建一个游标：cursor()</p>
+<p>3、通过游标对象，去执行sql语句：execute()</p>
+<p>4、提交执行事物：commit()</p>
+<p>5、关闭连接，将开的库文件释放掉，以便其他程序调用</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569482823940.png" alt="1569482823940"></p>
+<p>3.2.3数据库表的操作(select：检索、查询操作)</p>
+<p>在执行查询语句后，Python会返回一个结果，循环器，这里面包含查询所需要获得记录和相关信息，我们可以通过循环读取的方式，来读取数据。</p>
+<p>语法：</p>
+<p>select * from tablename where 条件</p>
+<p>fetchone()</p>
+<p>fetchall()</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569489125800.png" alt="1569489125800"></p>
+<p>以上两个函数一定要结合游标来使用才能出结果</p>
+<p>除了以上比较直接获得结果内容以外，还要以通过循环游标的循环器来获得每行数据，此时每行数据为元组类型</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569488811120.png" alt="1569488811120"></p>
+<p>3.2.4数据库表的操作(delete：删除)</p>
+<p><strong>drop 权限很大慎用</strong></p>
+<p>delete from tablename#删除所有</p>
+<p>delete from tablename where id=</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569487140197.png" alt="1569487140197"></p>
+<p>3.2.5数据库表的操作(update：更新)</p>
+<p>update tablename set 字段名=新值  where 字段名=名字</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569487407267.png" alt="1569487407267"></p>
+<p>3.2.6数据库表的操作(insert：插入)</p>
+<p>插入值的语法为：</p>
+<p>insert into tablename values(1,2,3,4)#全匹配插入值</p>
+<p>insert into tablename (列表1，列表2) values(值1，值2)</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569484583229.png" alt="1569484583229"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569485734331.png" alt="1569485734331"></p>
+<p>这里面有批量插入函数executemany(),支持通过Python批量插入</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569485858596.png" alt="1569485858596"></p>
+<p>3.2.7综合应用</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569489941401.png" alt="1569489941401"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/14/爬虫4/" data-id="ck2yonz47000364tmjx7fhgd7" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-爬虫3" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/14/爬虫3/" class="article-date">
+  <time class="post-time" datetime="2019-11-14T12:20:35.386Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">14</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、昨日作业点评</p>
+<p>#作业：四川话八级考试</p>
+<p>#业务：答题而言，先呈现试卷，自上而下内容：</p>
+<p>#试卷标题：四川话八级考试</p>
+<p>#考试须知：当前题型组成，判定标准，友好的内容说明</p>
+<p>#题型组成</p>
+<p>#一：选择题</p>
+<p>#1.xxxx</p>
+<p>#a.xxx  b.xxx</p>
+<p>#c.xxx   d.xxx</p>
+<p>#二：多选题</p>
+<p>#三：判断题</p>
+<p>#四：问答题</p>
+<p>#</p>
+<p>#实现难点</p>
+<p>#试卷的显示技术：</p>
+<p>#A:print()</p>
+<p>#B:list/元组/字典+print()</p>
+<p>#C:条件和循环+list/元组/字典+print()</p>
+<p>#</p>
+<p>#试卷答题技术</p>
+<p>#A:input()+string</p>
+<p>#B:input()+list/元组/字典</p>
+<p>2.3.5 条件语句</p>
+<p>1、if,正如他的英文意思一样，是”如果”的意思，即如果什么情况发生，则怎么样，if的用法如下：</p>
+<p>if可以判断真假表达式，或者是能判断是否为空的数据结构</p>
+<p>在表达式为真时运行的代码</p>
+<p>书写方式：</p>
+<p>在所有需要在if里面运行的代买，都需要添加至少一个空格作用缩进，一般约定4个空格，即一个tab</p>
+<p>判断的短路效应</p>
+<p>用两个关键的连接符连接的条件</p>
+<p>and与，都必须为真，如果其中有一个条件为假,那么后面的条件就不会执行</p>
+<p>or：或 只需要满足一个为真</p>
+<p>2.3.6循环语句</p>
+<p>for</p>
+<p>while</p>
+<p>以上两个均为循环语句的关键字</p>
+<p>所谓循环就是一段代码可以反复运行多次</p>
+<p>语法：</p>
+<p>for x in y:</p>
+<p>x变量 y迭代器内容</p>
+<p>for i in range(6)：range函数一个迭代器表示执行多少次</p>
+<p>​    print() //循环体 i的范围是0-5</p>
+<p>str(i)可以将i转换为字符型</p>
+<p>迭代器可以是数字可以是字符串还可以是列表</p>
+<p>循环字典：</p>
+<p>format(key)连接方式是一个点</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569382617086.png" alt="1569382617086"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569383049752.png" alt="1569383049752"></p>
+<p>while循环：</p>
+<p>在不知道需要执行多少次时可以优先考虑while，在这种情况要么死循环要么跳出循环</p>
+<p>while 条件：</p>
+<p>​    循环体</p>
+<p>自增 i=i+1或者 i+=1</p>
+<p>continue跳过本次循环</p>
+<p>break退出循环</p>
+<p>要跳出或中断循环，在需要的地方，加以关键字就可以实现其操作</p>
+<p>2.4函数</p>
+<p>2.4.1何为函数？</p>
+<p>是一套定义好的流程，可以包含输入和输出，比如输入数据，返回结果等，两个函数之间可能相互独立的，也可能一个函数输入是另一个函数的输出，也可能是一个函数内部调用另一个函数。</p>
+<p>2.4.2函数的作用</p>
+<p>def  函数名():</p>
+<p>​        过程代码</p>
+<p>函数的作用就是把这个过程，可具有相同类别的内容，规格统一放在一个代码块中，并根据函数的执行过程，或业务的执行流程来调用不同的函数或增减函数</p>
+<p>2.4.3函数的定义</p>
+<p>在Python中，定义一个函数我们采用顶格的def关键字来定义一个函数，一个函数结构一般包含以下内容：</p>
+<p> def  函数名(参数1，参数2，…..):</p>
+<p>​        过程代码</p>
+<p>​        return 返回值</p>
+<p>以上为最大函数体的结构组成</p>
+<p>以下为最小函数体的结构组成</p>
+<p>def  函数名():</p>
+<p>​        过程代码</p>
+<p>返回值</p>
+<p>一个函数可以至少有一个返回值，可以认为指定任务类型的返回数据，如果没有人为指定，那么返回值为none，返回值的个数，可以一个，也可以是多个，函数的返回除了是常见的数据类型以外，还可以是另一个函数</p>
+<p>在以下几个方面，return是等价的</p>
+<p>1、没有return</p>
+<p>2、return（只有return，后面不更任务的变量和结果）</p>
+<p>3、return None</p>
+<p>在函数中，可以使用return将里面的结果返回出来，代码一旦运行到return那么函数就会结束，return后面的代码就不会执行</p>
+<p>函数定义和书写的注意事项：</p>
+<p>在一个Python工程中，应该保证每个函数的名字是唯一，函数体就是这个函数执行的一系列的操作。操作可能只有一行代码，也可能是多行。</p>
+<p>一个函数原则上只能做一件事，同时Python编码规范定义，一个函数的函数体最多不能超过20行代码，如果超过了，说明这个函数做了不止一件事。如果超过，应该将这个函数拆解为多个小函数。这儿也是说函数体可以调用其他函数。</p>
+<p>2.4.4函数的调用</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569397309138.png" alt="1569397309138"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569397808599.png" alt="1569397808599"></p>
+<p>2.4.5函数的参数</p>
+<p>如：请输入由逗号分隔的非零整数</p>
+<pre><code>input_string = input(&quot;请输入由逗号分隔的两个非零整数：&quot;)
+a,b=input_string.split(&apos;,&apos;)
+return int(a),int(b)</code></pre><p>在函数中设置了参数split_chat</p>
+<p>input_string = input(“请输入由{}分隔的两个非零整数：”.format(split_chat))</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/14/爬虫3/" data-id="ck2yonz48000464tmrdmkymsk" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-爬虫5" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/14/爬虫5/" class="article-date">
+  <time class="post-time" datetime="2019-11-14T12:20:35.386Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">14</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第四章：python技术及应用</p>
+<p>爬虫？</p>
+<p>爬=请求某个网站的数据</p>
+<p>正常上网的行为流程</p>
+<p>我们常讲的HTML超(link)文本标记语言</p>
+<p>1、打开浏览器</p>
+<p>2、输入链接</p>
+<p>3、点击链接</p>
+<p>4、阅读或获取(网页另存为，copy)内容(文本，音频，视频)</p>
+<p>以上为人的操作，效率视人的精力和各种因素决定</p>
+<p>通过计算机语言或技术快速实现</p>
+<p>python要实现上述类似于人的操作，需要怎么做呢？</p>
+<p>python能够获取的内容或能够进行技术化东东(网页源码)</p>
+<p>1、输入网页</p>
+<p>2、”点击”链接</p>
+<p>3、获取网页源代码</p>
+<p>4、解析源代码(制定符合解析规则的内容让python知道该如何获得内容)</p>
+<p>5、保存、存储</p>
+<p>要通过python实现爬虫，需要什么条件？</p>
+<p>1、相对应的库</p>
+<p>(1)request：用于模拟人的行为进行数据请求，返回页面对应页面对象</p>
+<p>(2)lxml:用于解析html、xml库支持文件，主要对返回回来的页面对象，进行解析效率极高</p>
+<p>？如何获取并应用这些库呢？</p>
+<p>通过pip获得</p>
+<p>pip install xxx[所需要的库名]</p>
+<p>cmd-&gt;pip install requests</p>
+<p>cmd-&gt;pip install lxml</p>
+<p>2、编码</p>
+<p>​    (1)字符串，列表，字典</p>
+<p>​    (2)循环for/while</p>
+<p>​    (3)判断if elif else</p>
+<p>​    (4)文件的读写open()/read()/write()</p>
+<p>​    (5)数据库存储sqlite</p>
+<p>4.1关键字的学习</p>
+<p>4.1.1 requests 库</p>
+<p>该库是一个第三方，主要的作用就是基于开源的AL开发协议的HTTP库，比urllib更加方便，可以节约大量时间。</p>
+<p>import requests</p>
+<p>创建请求：</p>
+<p>普通的HTTP请求有两种方式：get/post</p>
+<p>r=request.get(‘<a href="http://www.baidu.com&#39;)#等于在浏览器中输入url的方式" target="_blank" rel="noopener">http://www.baidu.com&#39;)#等于在浏览器中输入url的方式</a></p>
+<p>r=request.post(‘’)#等于是类似from表单或隐形的请求，这个方式更安全，但是也很多阻碍</p>
+<p>通过get/post请求以后，会返回一个response对象，里面有我们需要的信息除了上面两个函数还有put() delete() head() options() ,结合这些函数，可以帮助我们进行更复杂的操作反爬虫机制</p>
+<p>4.1.2 url中传递参数</p>
+<p>要想在url中查询数据，我们可以在url后加上？及键值对如：</p>
+<p><a href="http://www.baidu.com?Kw=zhiliaotang" target="_blank" rel="noopener">http://www.baidu.com?Kw=zhiliaotang</a></p>
+<p>如果切换到python中，使用requests对象操作：</p>
+<p><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml14292%5Cwps1.jpg" alt="img"></p>
+<p>4.1.3 如何查看响应的内容</p>
+<p>text</p>
+<p>respones.text</p>
+<p><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml14292%5Cwps2.jpg" alt="img"></p>
+<p><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml14292%5Cwps3.jpg" alt="img"></p>
+<p>4.2LXML</p>
+<p>lxml是python中的一个非常高效的解析库，支持xml和HTML，对于内容，他支持xpath解析方式</p>
+<p>cp el</p>
+<p>cp xpath(xml path language),他是一门在xml文档中查找信息的语言，他最初是用来做xml文档搜寻工作，现在同样的使用于HTML的内容或文档搜索。</p>
+<p>xpath在爬虫中主要依赖lxml库来完成节点的定位，以方便我们获得节点中的数据</p>
+<p>4.2.1xpath常见规则</p>
+<p>表达式：</p>
+<p>nodename:选取当前节点的所有子节点，如body/dev</p>
+<p>/：从当前节点直接选取子节点，如：/html/body</p>
+<p>//:从当前节点直接选取子孙节点</p>
+<p>.:选取当前节点</p>
+<p>..:选取当前节点的上一级节点等于是选取父节点</p>
+<p>@：选取属性，如：<div name="123"></div> @name</p>
+<p>*:通配符，选取所有元素节点与元素名</p>
+<p>@*：选取所有的属性</p>
+<p>[@atrrib]选取所有属性的所有元素</p>
+<p>[tag]选取所有具有指定元素的直接子节点</p>
+<p>[tag=’text’]选取所有指定元素并且文本内容是text节点</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569579284969.png" alt="1569579284969"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569579904465.png" alt="1569579904465"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580103798.png" alt="1569580103798"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580144675.png" alt="1569580144675"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580344830.png" alt="1569580344830"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580988792.png" alt="1569580988792"></p>
+<p>request、xml库的应用</p>
+<p>http协议的应用</p>
+<p>HTML的dom分析及应用</p>
+<p>爬虫的数据存储</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569582576597.png" alt="1569582576597"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/14/爬虫5/" data-id="ck2yonz49000564tmoe6f3tu1" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-爬虫" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/14/爬虫/" class="article-date">
+  <time class="post-time" datetime="2019-11-14T12:20:35.371Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">14</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、什么是爬虫？</p>
+<p>答：它是一种计算机程序，通过计算机语言开发而来，它的行为看起来就像一只蜘蛛在网上爬行工作一样，蜘蛛的英文单词：spider-爬虫的别名。</p>
+<p>百度蜘蛛，Google蜘蛛实质就是一个或一套爬虫程序。</p>
+<p>爬虫就是进行数据爬取，并可以简单的数据处理（数据清洗）操作的特殊应用程序。</p>
+<p>爬取来源：一般是通过互联网展开而来</p>
+<p>爬虫可以做什么？</p>
+<p>1：收集数据</p>
+<p>是直接，最常用的使用方法</p>
+<p>2：尽职调查</p>
+<p>是否在尽职的工作，很多时候我们讲的内容讲的话或多或少都有一些水分。数据是不会说谎的，可以通过“爬虫”来对发生的数据进行读取，并最终形成结果，以验证过程是否如数据所言。</p>
+<p>3：刷流量和秒杀</p>
+<p>………………………………………………………………………………………………………………………..</p>
+<p>爬虫的开发技术</p>
+<p>爬虫的开发技术一般有两个层面</p>
+<p>1：“技”；通过各种程序语言和框架的使用来完成这个功能，这个层面更像软件文档，目前市面上的数据大都停留在只教你如何通过这个技术来实现爬虫</p>
+<p>2：“术”；就是方法，比如遇到反爬虫的问题，遇到一些特殊情况时，技只是支撑实现功能的基础，而术就是提供解决这些问题的思路，所以更强调思想和流程调度。</p>
+<p>目前要实现爬虫的语言很多，Java，php，Python…….都能够实现爬虫，为什么多采用Python实现？</p>
+<p>答：原因是语法相对与其他语言简单，相对于其他语言够直接，语法简单，入门容易，有强大的库支持</p>
+<p>两个重要的库：requests、scrapy</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/14/爬虫/" data-id="ck2yonz3w000064tmal57eie3" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-爬虫2" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/14/爬虫2/" class="article-date">
+  <time class="post-time" datetime="2019-11-14T12:20:35.371Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">14</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第二章：Python基础</p>
+<p>Python开发环境的搭建，官方网站“<a href="http://www.pthon.org”" target="_blank" rel="noopener">www.pthon.org”</a></p>
+<p>2.1 python的安装与运行</p>
+<p>由于历史原因，目前市面上流通的Python有两个版本，Python2.x 和Python3.x，如何区别代码2还是代码3写的，看或写：</p>
+<p>print(‘’);//python3</p>
+<p>print’’;//python2</p>
+<p>为什么需要区别版本，因为两个版本相互不兼容的</p>
+<p>Python官方宣布过，在未来Python的发展主要以3为主，Python3会新增的功能，而2只做过修复bug，不会新增功能</p>
+<p>2.1.1安装</p>
+<p>Python3.7.1(可以去官网下最新版，差异不大)</p>
+<p>windows:</p>
+<p>首先先查看系统环境</p>
+<p>32位对应32位的环境</p>
+<p>64位对应64位的环境（兼容安装32位）</p>
+<p>Mac os:</p>
+<p>Homebrew安装：brew install python3</p>
+<p>在Macos中，已经内置Python2</p>
+<p>如果无法完成homebrew安装，可以到官网下载macos对应的pkg安装包进行安装</p>
+<p>Linux:</p>
+<p>Python –version 查看当前系统版本，如果版本低或没有安装，或以通过以下命令完成：</p>
+<p>sudo apt-get update</p>
+<p>sudo apt-get install python3.7 python3-dev python3.pip libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev</p>
+<p>2.2Python的开发工具</p>
+<p>作为脚本开发语言，由于程序比较简单，因此编辑工具比较简单。</p>
+<p>面向脚本的开发工具就特别多</p>
+<p>2.3Python的数据结构和控制结构</p>
+<p>两个内置函数</p>
+<p>print();//用于输出结果或信息，多用在向控制台输出内容。</p>
+<p>input();//用于接收输入的内容</p>
+<p>2.3.1整数、浮点数、变量</p>
+<p>A：整数和浮点数</p>
+<p>Python中的整数和数学中定义的整数是一样的。</p>
+<p>Python中的浮点数和数学中定义的小数是一样的。</p>
+<p>在Python中，我们可以通过print打印一个整数或浮点数</p>
+<p>如：</p>
+<p>print(1234) print(1.234)</p>
+<p>整数的加减乘除运算可以在print中直接进行，同时还支持通过括号的方式来改变运算的优先级</p>
+<p>如：</p>
+<p>print(1-10)</p>
+<p>print(3+2-5*0)</p>
+<p>print((3+2-5)*1)</p>
+<p>在Python中做除法运算会得到浮点结果</p>
+<p>如</p>
+<p>print(5/5)</p>
+<p>结果是：1.0</p>
+<p>在浮点运算中，如0.3+0.1结果不是0.4，而是很长一段浮点值，这不是Python的问题，这是由于浮点数的存储机制导致的。</p>
+<p>注意：不应该直接Python进行精确计算，但是进行日常精度不高的四则运算是没有问题的。</p>
+<p>B:变量</p>
+<p>变量是可以变的，可以理解为一个存放其他数据的盒子，使用变量可以减少重复的输入。</p>
+<p>如：</p>
+<p>len=10</p>
+<p>width=15</p>
+<p>height=20</p>
+<p>D=width*len</p>
+<p>T=D*height</p>
+<p>print(D)</p>
+<p>print(T)</p>
+<p>一个合法的变量为等号左边为变量名，右边为变量值，其中等号是赋值的意思。</p>
+<p>如</p>
+<p>name=”zhiliaotang” 意思就是变量名为name 值为”zhiliaotang”</p>
+<p>补充：变量的类型完全由赋值结果来确定结果是整形就是整形是字符串就是字符串。</p>
+<p>Demo 完成一个简单的计算器小程序，实现简单的四则运算即可。要求用户输入值程序接收到值在进行计算，并打印结果。</p>
+<p>cmd下直接运行Python脚本的方法</p>
+<p>如脚本名为：abc.py</p>
+<p>cmd》python abc.py</p>
+<p>2.3.2字符串</p>
+<p>在Python中字符串是一种比较常见的数据类型，任何被单引号或双引号括起来的内容，都可以被认为是字符串，字符串也可以赋值给</p>
+<p>string_1=’我是谁’#字符串可以接受中文或英文或其他语言的字符内容</p>
+<p>string_2=’im zhi’</p>
+<p>string_3=’’#空字符串</p>
+<p>string_4=’ ‘#空格字符串</p>
+<p>string_5=’a’#只有一个字母</p>
+<p>string_6=””#采用双引号的字符串定义</p>
+<p>从上面的行码可以看出，字符串的内容可以是中文、英文、数字、空格以及其他字符组成。</p>
+<p>字符串形式的数字和普通数字是不一样的如：</p>
+<p>int=123</p>
+<p>string=”123”</p>
+<p>以上两个变量的结果不一样的</p>
+<p>2、列表(list)</p>
+<p>数据类型的表现形式为：list = []</p>
+<p>列表在Python中是一种容器类型，由方括号和方括号中的数据组成。里面的数据可以是整数、浮点数、字符串，也可以是另一个列表或其他数据结构</p>
+<p>列表中的每一项叫作列表的一个元素，每一个元素之间使用逗号隔开。</p>
+<p>如：</p>
+<p>List_1=[1,2,3,4,5,6]#列表中有6个元素，全都是数字</p>
+<p>List_2=[‘abc’ , ‘x’]</p>
+<p>List_3=[]#空列表</p>
+<p>List_4=[‘123’,123,3.2,[123,’as’]]#由多种元素组成的复合列表</p>
+<p>3、元组(tuple)</p>
+<p>数据类型的表现形式为：tuple=()</p>
+<p>元组也是Python中的一种容器类型，由小括号和小括号括起来的数据构成，外型和列表非常像，只不过列表为方括号，元组为小括号，”元组”中的”元”和”二元一次方程”中的元是一个意思，”组”就是组合的意思。</p>
+<p>如：</p>
+<p>tuple1=(1,2,3,4,5,6)#元组中有6个元素，都为数字</p>
+<p>tuple1=(‘123’,’sss’)</p>
+<p>tuple1=()</p>
+<p>tuple1=(‘123’,123,3.2,[123,’as’],(1,2,3))</p>
+<p>元组支持类型&gt;列表&gt;字符串&gt;整数</p>
+<p>元组和列表的区别：</p>
+<p>列表生成以后，还可以往里面继续添加数据，也可以从里面删除数据</p>
+<p>元组生成以后，就不能修改以下几种类型的数据：整数，浮点数，字符，另一个元组。里面是列表的除外</p>
+<p>2.3.3数据的读取</p>
+<p>字符串、元组、列表三种数据结构的读取方式完全一样</p>
+<p>1指定下标</p>
+<p>在大多数的编程语言里面，下标都是从0开始的，Python也不例外，，也是从第0个元素开始，第0个指的是元素最左边的那个。</p>
+<p>string_name=’yan’</p>
+<p>在字符中，第0个字符是”y”</p>
+<p>list=[‘a’,’b’,’c’] 在列表中第0个元素是”a”</p>
+<p>tuple=(1,2,3)在元组中第0个元素是1</p>
+<p>在以上三种类型的数据中,想要任何一个元素的内容，都可以直接使用以下表达式：</p>
+<p>变量名[下标] 来获取对应下标的内容</p>
+<p>0-字符长度-1，如字符串长度为8个字符，则范围为0-7</p>
+<p>实际取值范围是-8-0-7</p>
+<p>下标如果为正值则正向取值，如</p>
+<p>name=’yan’</p>
+<p>name[0]=&gt;’y’</p>
+<p>name[-1]=&gt;’n’</p>
+<p>2切片操作</p>
+<p>字符串通过切片以后，结果还是字符串，列表切片以后还是列表，元组切片以后还是元组</p>
+<p>为什么要切片，需要获取某个范围的内容时，需要用到切片操作</p>
+<p>切片格式为：</p>
+<p>变量名[开始位置的下标：结束位置的下标：步长]</p>
+<p>其中，开始位置的下标，结束位置的下标，步长都可以部分省略</p>
+<p>这三个参数都是数字</p>
+<p>步长：</p>
+<p>步长正值从左到右</p>
+<p>负值从右到左</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569310179881.png" alt="1569310179881"></p>
+<p>3、拼接和修改</p>
+<p>字符串的拼接</p>
+<p>string1=’123’</p>
+<p>string2=’456’</p>
+<p>string3=string1+string2</p>
+<p>修改内容</p>
+<p>字符串的修改</p>
+<p>字符串重新赋值即可修改</p>
+<p>name=’123’</p>
+<p>name=’456’</p>
+<p>元组和列表的修改采用下标完成</p>
+<p>list=[1,2,3,4]</p>
+<p>list[1]=10</p>
+<p>list.append(“”)可以向列表添加元素</p>
+<p>#元组是不可变容器，列表为可变容器，所以append()只能作用于可变容器</p>
+<p>2.3.4字典与集合</p>
+<p>1、字典</p>
+<p>字典使用大括号括起来的键(key)值(value)对，每个键值对之间使用英文逗号分隔，每个key-value之间使用英文的冒号分隔，如</p>
+<p>dict={‘name’:’yan’,’work’:’java’}</p>
+<p>key:中文、英文或数据，但是不能重复</p>
+<p>value: 可以是任意字符串、数字、列表、元组或另一个字典，value可以重复</p>
+<p>字典的取值：</p>
+<p>变量名[key]</p>
+<p>变量名.get(key)</p>
+<p>2、集合</p>
+<p>集合就是没有key的，由大括号括起来的内容，而内容可以是不同的数据类型，如：set={‘1’,2,3,’c’}</p>
+<p>集合里面的元素是不能重复的，集合也表现出了无序特征</p>
+<p>集合最大的应用之一就是去重操作，列如，把一个带有重复元素的列表转为集合，再转回列表，那么重复的内容元素只会保留一个，把列表转换为集合需要使用set()函数，把集合转换为列表用list()函数</p>
+<p>list1=[3,1,2,5]</p>
+<p>union=list(set(list1))</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/14/爬虫2/" data-id="ck2yonz45000264tm49lpvvez" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-python爬虫数据可视化" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/14/python爬虫数据可视化/" class="article-date">
+  <time class="post-time" datetime="2019-11-14T12:20:35.324Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">14</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>python爬虫数据可视化</p>
+<p>准备工作：</p>
+<p>1、可以进行爬虫的脚本，且脚本支持数据存储（存储容器建议支持sqlite/mysql/sqlserver）</p>
+<p>2、要有一个有数据的数据库文件或系统（sqlite3库本名：xxx.db）</p>
+<p>3、具备HTML+CSS+JS的基础应用能力</p>
+<p>​    （1）html:内容</p>
+<p>​    （2）css:布局和样式</p>
+<p>​    （3）JS:交互和事件</p>
+<p>4、开发环境：</p>
+<p>​    （1）IDE:HbuilderX</p>
+<p>​    （2）Sqlite 5.2管理工具</p>
+<p>目标：</p>
+<p>通过上一章节中，爬虫爬回来的数据（数据是存放于sqlit3DB文件中），然后通过JS的异步加载方式，加载DB文件，然后从DB中用数据库语法查询出所需要的数据，然后再通过HTML+css将他们呈现在网页上（完成上述功能，需要一个支持HTTP协议的服务器）</p>
+<p>要实现数据从sqlite在读取过来，需要的技术？</p>
+<p>异步加载：Ajax</p>
+<p>核心是js对象XMLHttpRequest，他是一种支持异步请求的技术</p>
+<p>而ajax是一种技术解决方案，包括JS，</p>
+<p>sql</p>
+<p>array uint8array</p>
+<p>首先申明一个对象、请求准备、发送请求、请求成功</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/14/python爬虫数据可视化/" data-id="ck2yonz43000164tmf6h7n0e1" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-熟悉PT面板及配置设备的模式与基本命令" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -99,7 +806,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/21/熟悉PT面板及配置设备的模式与基本命令/" data-id="cjzl7l6cc0002hstmwwk5ct02" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/08/21/熟悉PT面板及配置设备的模式与基本命令/" data-id="ck2yonz4u000964tm2eo4zn5r" class="article-share-link">分享</a>
       
       
     </footer>
@@ -136,7 +843,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/动态路由协议/" data-id="cjzl7l6a10001hstmroyr7nmr" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/08/16/动态路由协议/" data-id="ck2yonz4r000864tmuxkwj26q" class="article-share-link">分享</a>
       
       
     </footer>
@@ -188,7 +895,7 @@
     <h2 class="author">John Doe</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>2</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>9</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>

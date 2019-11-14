@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>xixuegui</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第四章：python技术及应用 爬虫？ 爬=请求某个网站的数据 正常上网的行为流程 我们常讲的HTML超(link)文本标记语言 1、打开浏览器 2、输入链接 3、点击链接 4、阅读或获取(网页另存为，copy)内容(文本，音频，视频) 以上为人的操作，效率视人的精力和各种因素决定 通过计算机语言或技术快速实现 python要实现上述类似于人的操作，需要怎么做呢？ python能够获取的内容或能够">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xixuegui">
+<meta property="og:url" content="http://yoursite.com/2019/11/14/爬虫5/index.html">
+<meta property="og:site_name" content="xixuegui">
+<meta property="og:description" content="第四章：python技术及应用 爬虫？ 爬=请求某个网站的数据 正常上网的行为流程 我们常讲的HTML超(link)文本标记语言 1、打开浏览器 2、输入链接 3、点击链接 4、阅读或获取(网页另存为，copy)内容(文本，音频，视频) 以上为人的操作，效率视人的精力和各种因素决定 通过计算机语言或技术快速实现 python要实现上述类似于人的操作，需要怎么做呢？ python能够获取的内容或能够">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml14292%5Cwps1.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml14292%5Cwps2.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml14292%5Cwps3.jpg">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569579284969.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569579904465.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580103798.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580144675.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580344830.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580988792.png">
+<meta property="og:image" content="c:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569582576597.png">
+<meta property="og:updated_time" content="2019-09-27T11:09:39.734Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xixuegui">
+<meta name="twitter:description" content="第四章：python技术及应用 爬虫？ 爬=请求某个网站的数据 正常上网的行为流程 我们常讲的HTML超(link)文本标记语言 1、打开浏览器 2、输入链接 3、点击链接 4、阅读或获取(网页另存为，copy)内容(文本，音频，视频) 以上为人的操作，效率视人的精力和各种因素决定 通过计算机语言或技术快速实现 python要实现上述类似于人的操作，需要怎么做呢？ python能够获取的内容或能够">
+<meta name="twitter:image" content="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml14292%5Cwps1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="xixuegui" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://s2.ax1x.com/2019/08/21/mtNT8U.jpg">
+    <h2 class="author">John Doe</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>9</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>0</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-爬虫5" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/14/爬虫5/" class="article-date">
+  <time class="post-time" datetime="2019-11-14T12:20:35.386Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">14</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第四章：python技术及应用</p>
+<p>爬虫？</p>
+<p>爬=请求某个网站的数据</p>
+<p>正常上网的行为流程</p>
+<p>我们常讲的HTML超(link)文本标记语言</p>
+<p>1、打开浏览器</p>
+<p>2、输入链接</p>
+<p>3、点击链接</p>
+<p>4、阅读或获取(网页另存为，copy)内容(文本，音频，视频)</p>
+<p>以上为人的操作，效率视人的精力和各种因素决定</p>
+<p>通过计算机语言或技术快速实现</p>
+<p>python要实现上述类似于人的操作，需要怎么做呢？</p>
+<p>python能够获取的内容或能够进行技术化东东(网页源码)</p>
+<p>1、输入网页</p>
+<p>2、”点击”链接</p>
+<p>3、获取网页源代码</p>
+<p>4、解析源代码(制定符合解析规则的内容让python知道该如何获得内容)</p>
+<p>5、保存、存储</p>
+<p>要通过python实现爬虫，需要什么条件？</p>
+<p>1、相对应的库</p>
+<p>(1)request：用于模拟人的行为进行数据请求，返回页面对应页面对象</p>
+<p>(2)lxml:用于解析html、xml库支持文件，主要对返回回来的页面对象，进行解析效率极高</p>
+<p>？如何获取并应用这些库呢？</p>
+<p>通过pip获得</p>
+<p>pip install xxx[所需要的库名]</p>
+<p>cmd-&gt;pip install requests</p>
+<p>cmd-&gt;pip install lxml</p>
+<p>2、编码</p>
+<p>​    (1)字符串，列表，字典</p>
+<p>​    (2)循环for/while</p>
+<p>​    (3)判断if elif else</p>
+<p>​    (4)文件的读写open()/read()/write()</p>
+<p>​    (5)数据库存储sqlite</p>
+<p>4.1关键字的学习</p>
+<p>4.1.1 requests 库</p>
+<p>该库是一个第三方，主要的作用就是基于开源的AL开发协议的HTTP库，比urllib更加方便，可以节约大量时间。</p>
+<p>import requests</p>
+<p>创建请求：</p>
+<p>普通的HTTP请求有两种方式：get/post</p>
+<p>r=request.get(‘<a href="http://www.baidu.com&#39;)#等于在浏览器中输入url的方式" target="_blank" rel="noopener">http://www.baidu.com&#39;)#等于在浏览器中输入url的方式</a></p>
+<p>r=request.post(‘’)#等于是类似from表单或隐形的请求，这个方式更安全，但是也很多阻碍</p>
+<p>通过get/post请求以后，会返回一个response对象，里面有我们需要的信息除了上面两个函数还有put() delete() head() options() ,结合这些函数，可以帮助我们进行更复杂的操作反爬虫机制</p>
+<p>4.1.2 url中传递参数</p>
+<p>要想在url中查询数据，我们可以在url后加上？及键值对如：</p>
+<p><a href="http://www.baidu.com?Kw=zhiliaotang" target="_blank" rel="noopener">http://www.baidu.com?Kw=zhiliaotang</a></p>
+<p>如果切换到python中，使用requests对象操作：</p>
+<p><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml14292%5Cwps1.jpg" alt="img"></p>
+<p>4.1.3 如何查看响应的内容</p>
+<p>text</p>
+<p>respones.text</p>
+<p><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml14292%5Cwps2.jpg" alt="img"></p>
+<p><img src="file:///C:%5CUsers%5Casus%5CAppData%5CLocal%5CTemp%5Cksohtml14292%5Cwps3.jpg" alt="img"></p>
+<p>4.2LXML</p>
+<p>lxml是python中的一个非常高效的解析库，支持xml和HTML，对于内容，他支持xpath解析方式</p>
+<p>cp el</p>
+<p>cp xpath(xml path language),他是一门在xml文档中查找信息的语言，他最初是用来做xml文档搜寻工作，现在同样的使用于HTML的内容或文档搜索。</p>
+<p>xpath在爬虫中主要依赖lxml库来完成节点的定位，以方便我们获得节点中的数据</p>
+<p>4.2.1xpath常见规则</p>
+<p>表达式：</p>
+<p>nodename:选取当前节点的所有子节点，如body/dev</p>
+<p>/：从当前节点直接选取子节点，如：/html/body</p>
+<p>//:从当前节点直接选取子孙节点</p>
+<p>.:选取当前节点</p>
+<p>..:选取当前节点的上一级节点等于是选取父节点</p>
+<p>@：选取属性，如：<div name="123"></div> @name</p>
+<p>*:通配符，选取所有元素节点与元素名</p>
+<p>@*：选取所有的属性</p>
+<p>[@atrrib]选取所有属性的所有元素</p>
+<p>[tag]选取所有具有指定元素的直接子节点</p>
+<p>[tag=’text’]选取所有指定元素并且文本内容是text节点</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569579284969.png" alt="1569579284969"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569579904465.png" alt="1569579904465"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580103798.png" alt="1569580103798"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580144675.png" alt="1569580144675"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580344830.png" alt="1569580344830"></p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569580988792.png" alt="1569580988792"></p>
+<p>request、xml库的应用</p>
+<p>http协议的应用</p>
+<p>HTML的dom分析及应用</p>
+<p>爬虫的数据存储</p>
+<p><img src="C:%5CUsers%5Casus%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569582576597.png" alt="1569582576597"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/14/爬虫5/" data-id="ck2yonz49000564tmoe6f3tu1" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/11/14/爬虫3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/14/爬虫/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">xixuegui</h1>
+    <h2 class="blog-subtitle"></h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://s2.ax1x.com/2019/08/21/mtNT8U.jpg">
+    <h2 class="author">John Doe</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>9</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>0</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
+          ShanaMaid
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2018 - 2019 John Doe<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
