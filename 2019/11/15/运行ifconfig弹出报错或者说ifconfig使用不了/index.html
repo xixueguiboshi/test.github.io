@@ -5,24 +5,22 @@
   
   <title>xixuegui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="centos 7 不停重启的问题解决方法 一、基础知识 1、运行级别的介绍 首先，CentOS系统有7个运行级别(runlevel)，如下： 运行级别0：系统停机状态，系统默认运行级别不能设为0，否则不能正常启动  运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登陆  运行级别2：多用户状态(没有NFS)  运行级别3：完全的多用户状态(有NFS)，登陆后进入控制台命令行模式">
+  <meta name="description" content="问题：刚刚最小安装完centos7，想查看本机IP地址，运行ifconfig，结果弹出报错。  经过百度知道没有安装ifconfig相关的工具，还有排查问题的方法是：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xixuegui">
-<meta property="og:url" content="http://yoursite.com/2019/11/15/centos 7 不停重启的问题解决方法/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/11/15/运行ifconfig弹出报错或者说ifconfig使用不了/index.html">
 <meta property="og:site_name" content="xixuegui">
-<meta property="og:description" content="centos 7 不停重启的问题解决方法 一、基础知识 1、运行级别的介绍 首先，CentOS系统有7个运行级别(runlevel)，如下： 运行级别0：系统停机状态，系统默认运行级别不能设为0，否则不能正常启动  运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登陆  运行级别2：多用户状态(没有NFS)  运行级别3：完全的多用户状态(有NFS)，登陆后进入控制台命令行模式">
+<meta property="og:description" content="问题：刚刚最小安装完centos7，想查看本机IP地址，运行ifconfig，结果弹出报错。  经过百度知道没有安装ifconfig相关的工具，还有排查问题的方法是：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://s2.ax1x.com/2019/11/15/MUh6j1.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/11/15/MUhs39.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/11/15/MUhycR.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/11/15/MUhgnx.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/11/15/MUh2B6.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/11/15/MUhRHK.jpg">
-<meta property="og:updated_time" content="2019-11-15T01:11:27.893Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/11/15/MaI8zQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/11/15/MaI8zQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/11/15/MdQ7m8.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/11/15/Mdly3n.png">
+<meta property="og:updated_time" content="2019-11-15T10:37:03.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xixuegui">
-<meta name="twitter:description" content="centos 7 不停重启的问题解决方法 一、基础知识 1、运行级别的介绍 首先，CentOS系统有7个运行级别(runlevel)，如下： 运行级别0：系统停机状态，系统默认运行级别不能设为0，否则不能正常启动  运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登陆  运行级别2：多用户状态(没有NFS)  运行级别3：完全的多用户状态(有NFS)，登陆后进入控制台命令行模式">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/11/15/MUh6j1.jpg">
+<meta name="twitter:description" content="问题：刚刚最小安装完centos7，想查看本机IP地址，运行ifconfig，结果弹出报错。  经过百度知道没有安装ifconfig相关的工具，还有排查问题的方法是：">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/11/15/MaI8zQ.png">
   
     <link rel="alternate" href="/atom.xml" title="xixuegui" type="application/atom+xml">
   
@@ -75,10 +73,10 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-centos 7 不停重启的问题解决方法" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-运行ifconfig弹出报错或者说ifconfig使用不了" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/15/centos 7 不停重启的问题解决方法/" class="article-date">
-  <time class="post-time" datetime="2019-11-15T01:06:30.984Z" itemprop="datePublished">
+    <a href="/2019/11/15/运行ifconfig弹出报错或者说ifconfig使用不了/" class="article-date">
+  <time class="post-time" datetime="2019-11-15T10:37:03.440Z" itemprop="datePublished">
     <span class="post-month">11月</span><br/>
     <span class="post-day">15</span>
   </time>
@@ -90,40 +88,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>centos 7 不停重启的问题解决方法</p>
-<p>一、基础知识</p>
-<p>1、运行级别的介绍</p>
-<p>首先，CentOS系统有7个运行级别(runlevel)，如下：</p>
-<p>运行级别0：系统停机状态，系统默认运行级别不能设为0，否则不能正常启动 </p>
-<p>运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登陆 </p>
-<p>运行级别2：多用户状态(没有NFS) </p>
-<p>运行级别3：完全的多用户状态(有NFS)，登陆后进入控制台命令行模式 </p>
-<p>运行级别4：系统未使用，保留 </p>
-<p>运行级别5：X11控制台，登陆后进入图形GUI模式 </p>
-<p>运行级别6：系统正常关闭并重启，默认运行级别不能设为6，否则不能正常启动</p>
-  <a id="more"></a>
+        <p>问题：刚刚最小安装完centos7，想查看本机IP地址，运行ifconfig，结果弹出报错。</p>
+<p><img src="https://s2.ax1x.com/2019/11/15/MaI8zQ.png" alt></p>
+<p>经过百度知道没有安装ifconfig相关的工具，还有排查问题的方法是：</p>
+<a id="more"></a>
 
-<p>系统中命令行的查看方法：    ls -ltr /lib/systemd/system/runlevel*</p>
-<p><img src="https://s2.ax1x.com/2019/11/15/MUh6j1.jpg" alt="img"> </p>
-<p>2、查看当前系统运行级别</p>
-<p>    可输入命令runlevel ，下边表示当前系统级别为5，是有图形界面模式的。如下：</p>
-<p><img src="https://s2.ax1x.com/2019/11/15/MUhs39.jpg" alt="img"> </p>
-<p>还可以使用命令行： systemctl get-default</p>
-<p>  <img src="https://s2.ax1x.com/2019/11/15/MUhycR.jpg" alt="img"></p>
-<p>   上边对应图片来查，就会看到这个multi-user.target 是对应的运行级别为3或者4 。</p>
-<p>二、解决方法</p>
-<p>   重启服务器或者虚拟机，到了下边这个页面时候或者在进入这个界面之前的一个图形界面，按e 键：</p>
-<p><img src="https://s2.ax1x.com/2019/11/15/MUhgnx.jpg" alt="img"> </p>
-<p>进入到下一个页面，然后按上下键，找到下边这个位置，添加systemd.unit=multi-user.target</p>
-<p><img src="https://s2.ax1x.com/2019/11/15/MUh2B6.jpg" alt="img"> </p>
-<p>添加完之后，按ctrl + x 键就可以登录进系统了。</p>
-<p>查看当前系统的运行级别是不是reboot.target ，或者可能是shutdown.target（就会导致不断重启） ，将它设置为正常的multi-user.target 即可。设置运行级别的命令如下：</p>
-<p><img src="https://s2.ax1x.com/2019/11/15/MUhRHK.jpg" alt="img"></p>
+<p>1）通过cat /etc/sysconfig/network-scripts/ifcfg-ens33 查看网卡是否启用，如果没有使用vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 修改网络配置文件。</p>
+<p>2）ping：如果可以ping通的话，说明网卡有启用，并能获取IP地址来上网。（如果不能可以通过vi  /etc/sysconfig/network-scripts/ifcfg-ens33  ，把ONBOOT改为yes。BOOTPROTO改为dhcp，或者改为手动获取IP地址，详见在centos7网络配置(如果有ifconfig 可以设置临时ip( ifconfig ens33 192.168.1.110 netmask 255.255.255.0) )）  注：修改完后需要重启网卡（命令：service network restart）</p>
+<p> 3）ip address: 能通ip add 查到获取的IP地址，证明网卡是启用。如果获取不了请修改网络配置文件。注：修改完后需要重启网卡（命令：service network restart）</p>
+<p>配置静态ip两种方法(自己理解)：</p>
+<p>一: nmtui</p>
+<p>图形界面进行配置，</p>
+<p><img src="https://s2.ax1x.com/2019/11/15/MaI8zQ.png" alt></p>
+<p>或者，需改配置文件vi /etc/sysconfig/network-scripts/ifcfg-ens33</p>
+<p><img src="https://s2.ax1x.com/2019/11/15/MdQ7m8.png" alt></p>
+<p>解决方案：</p>
+<p>查找ifconfig的安装包，yum provides ifconfig</p>
+<p><img src="https://s2.ax1x.com/2019/11/15/Mdly3n.png" alt></p>
+<p>yum install net-tools,之后可以试试能不能用ifconfig这个命令了</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/15/centos 7 不停重启的问题解决方法/" data-id="ck300i6x800002stmv5a4muzf" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/11/15/运行ifconfig弹出报错或者说ifconfig使用不了/" data-id="ck300i6xn00042stmj38yxxk7" class="article-share-link">分享</a>
       
       
     </footer>
@@ -132,17 +119,8 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/11/15/运行ifconfig弹出报错或者说ifconfig使用不了/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/21/熟悉PT面板及配置设备的模式与基本命令/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/11/15/centos 7 不停重启的问题解决方法/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title"></div>
     </a>
